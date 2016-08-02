@@ -15,7 +15,7 @@ Todo o material do curso está disponível em:
 ### JavaScript e sua essência (Primeira semana)
 
 - [x] Aula 1 - Introdução, Strict Mode, Variáveis e Hoisting;
-- [ ] Aula 2 - Tipos de dados, Operadores, Estruturas de controle;
+- [x] Aula 2 - Tipos de dados, Operadores, Estruturas de controle;
 - [ ] Aula 3 - Funções, Closure e Callback;
 - [ ] Aula 4 - Namespace e Prototype;
 - [ ] Aula 5 - Race Condition e Promises;
