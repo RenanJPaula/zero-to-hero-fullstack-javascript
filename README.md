@@ -16,6 +16,6 @@ Todo o material do curso está disponível em:
 
 - [x] Aula 1 - Introdução, Strict Mode, Variáveis e Hoisting;
 - [x] Aula 2 - Tipos de dados, Operadores, Estruturas de controle;
-- [ ] Aula 3 - Funções, Closure e Callback;
+- [x] Aula 3 - Funções, Closure e Callback;
 - [ ] Aula 4 - Namespace e Prototype;
-- [ ] Aula 5 - Race Condition e Promises;
+- [ ] Aula 5 - ES6;
