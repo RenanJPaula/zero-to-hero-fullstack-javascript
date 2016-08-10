@@ -1,0 +1,20 @@
+{
+  "name": "RepGO",
+  "version": "1.0.0",
+  "description": "Solução para o gerenciamento de repúblicas!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MongoDB",
+    "Nodejs",
+    "Express",
+    "AngularJS"
+  ],
+  "author": "Curso Zero to Hero Fullstack JavaScript",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.5.8"
+  }
+}
