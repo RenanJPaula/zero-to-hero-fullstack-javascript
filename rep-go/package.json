@@ -4,7 +4,9 @@
   "description": "Solução para o gerenciamento de repúblicas!",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "npm install",
+    "start": "nodemon ./bin/www"
   },
   "keywords": [
     "MongoDB",
@@ -15,6 +17,8 @@
   "author": "Curso Zero to Hero Fullstack JavaScript",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
     "mongoose": "^4.5.8"
   }
 }

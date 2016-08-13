@@ -1,12 +1,15 @@
-'use strict'
+'use strict';
 
 const db = require('./db');
-const transaction = require('./model/transaction-model')
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
 
-db.on('open', () => {
+// Application config
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-  transaction.create({ type: 'Debit' }).then(function(data) {
-    console.log(data);
-  });
+// Route config
+app.use(require('./routes/transaction-route'));
 
-});
+module.exports = app;
