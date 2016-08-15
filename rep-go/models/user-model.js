@@ -19,7 +19,27 @@ const schema = new mongoose.Schema({
 const User = mongoose.model('User', schema)
 const model = {};
 
-model.authenticate = user => {
+model.getAll = () => {
+  return User.find({});
+};
+
+model.getById = (_id) => {
+  return User.findOne({ _id });
+};
+
+model.create = (user) => {
+  return User.create(user);
+};
+
+model.update = (_id, user) => {
+  return User.update({ _id }, user);
+};
+
+model.remove = (_id) => {
+  return User.update({ _id }, { active: false });
+};
+
+model.authenticate = (user) => {
   return new Promise((resolve, reject) => {
     let _query = {
       name: user.name,

@@ -14,5 +14,6 @@ app.use(require('./middlewares/auth-middleware.js'));
 
 // Route config
 app.use(require('./routes/transaction-route'));
+app.use(require('./routes/user-route'));
 
 module.exports = app;
