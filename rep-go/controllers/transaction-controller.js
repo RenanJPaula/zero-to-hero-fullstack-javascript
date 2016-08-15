@@ -24,6 +24,8 @@ ctrl.getById = (req, res) => {
 };
 
 ctrl.create = (req, res) => {
+  req.body.user = req.user._id;
+
   Transaction.create(req.body)
     .then(data => {
       return res.status(201).send(data);

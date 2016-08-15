@@ -6,6 +6,10 @@ const schema = new mongoose.Schema({
     type: String,
     enum: ['Debit', 'Credit'],
     required: true
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true
   }
 });
 
