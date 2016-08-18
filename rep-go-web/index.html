@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="repgo">
+  <head>
+    <meta charset="utf-8">
+    <title>Cadastro de usuário</title>
+
+    <style media="screen">
+      .adm{
+        color: red
+      }
+    </style>
+  </head>
+  <body>
+
+    <div ng-controller="UserController">
+      <form>
+        <h1>Usuário:</h1>
+        <input type="text" ng-model="user.nome">
+
+        <button type="button" ng-click="add()">Add</button>
+      </form>
+
+      <ul>
+        <li ng-show="usuarios.length == 0">Nenhum usuário inserido</li>
+        <li ng-repeat="usuario in usuarios" ng-class="{'adm': usuario.selecionado}">
+          {{ usuario.nome }}
+          <input type="checkbox" ng-model="usuario.selecionado">
+        </li>
+      </ul>
+
+      <button type="button" ng-click="removerSelecionados()">Remover Selecionados</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="src/js/app.js"></script>
+
+  </body>
+</html>
