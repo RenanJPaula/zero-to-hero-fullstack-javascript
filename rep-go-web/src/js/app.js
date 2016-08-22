@@ -1,6 +1,6 @@
 (function(angular) {
   'use strict';
 
-  angular.module('repgo', []);
+  angular.module('repgo', ['ngMaterial', 'ngRoute']);
 
 })(angular);

@@ -1,0 +1,21 @@
+<form data-ng-submit="save(userCtrl.user)" layout="column">
+  <md-input-container>
+    <label for="name">Name</label>
+    <input id="name" type="text" required
+           data-ng-model="userCtrl.user.name">
+  </md-input-container>
+
+  <md-input-container>
+    <label for="password">Password</label>
+    <input id="password" type="password" required
+           data-ng-model="userCtrl.user.password">
+  </md-input-container>
+
+  <md-input-container>
+  <label for="confirmPassword">Confirm</label>
+    <input id="confirmPassword" type="password" required
+           data-ng-model="userCtrl.user.confirmPassword">
+  </md-input-container>
+
+  <md-button type="submit" class="md-raised md-primary" name="save">Save</md-button>
+</form>
