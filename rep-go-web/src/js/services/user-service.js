@@ -12,6 +12,10 @@
       return $http.post(API.user, user);
     };
 
+    svc.getAll = function() {
+      return $http.get(API.user);
+    };
+
     return svc;
   }
 

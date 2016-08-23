@@ -20,7 +20,7 @@
                 Menu
               </md-button>
 
-              <h2>RepGO</h2>
+              <h1>RepGO</h1>
             </div>
           </md-toolbar>
         </md-content>
@@ -34,8 +34,26 @@
       </nav>
     </header>
 
-    <div class="main-content" data-ng-view="">
+    <div class="main-content" data-ng-controller="UserListController as userListCtrl">
       <!-- Content -->
+
+      <!-- Código que será exportado -->
+      <h2>Users</h2>
+
+      <md-whiteframe class="md-whiteframe-1dp" layout="row" layout-padding>
+
+        <md-list flex data-ng-init="initList()">
+          <md-list-item class="md-2-line" data-ng-repeat="user in users">
+            <div class="md-list-item-text" layout="column">
+              <h3>{{user.name}}</h3>
+              <p>{{user.email}}</p>
+            </div>
+          </md-list-item>
+        </md-list>
+
+      </md-whiteframe>
+
+      <!-- FIM código que será exportado -->
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -47,10 +65,10 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
     <script src="src/js/app.js"></script>
-    <script src="src/js/config/route-config.js"></script>
     <script src="src/js/config/api-config.js"></script>
     <script src="src/js/services/user-service.js"></script>
     <script src="src/js/controllers/menu-controller.js"></script>
     <script src="src/js/controllers/user-controller.js"></script>
+    <script src="src/js/controllers/user-list-controller.js"></script>
   </body>
 </html>
