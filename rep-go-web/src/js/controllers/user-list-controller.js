@@ -14,6 +14,10 @@
       });
     };
 
+    $scope.show = function(user) {
+      console.log(user);
+    };
+
   }
 
 })(angular);

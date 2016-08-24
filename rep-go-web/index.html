@@ -34,22 +34,41 @@
       </nav>
     </header>
 
-    <div class="main-content" data-ng-controller="UserListController as userListCtrl">
+    <div class="main-content" data-ng-controller="UserController as userCtrl">
       <!-- Content -->
 
       <!-- Código que será exportado -->
-      <h2>Users</h2>
+      <h2>User</h2>
 
       <md-whiteframe class="md-whiteframe-1dp" layout="row" layout-padding>
 
-        <md-list flex data-ng-init="initList()">
-          <md-list-item class="md-2-line" data-ng-repeat="user in users">
-            <div class="md-list-item-text" layout="column">
-              <h3>{{user.name}}</h3>
-              <p>{{user.email}}</p>
-            </div>
-          </md-list-item>
-        </md-list>
+        <form data-ng-submit="save(userCtrl.user)" flex layout="column">
+          <md-input-container flex>
+            <label for="name">Name</label>
+            <input id="name" type="text" required
+                   data-ng-model="userCtrl.user.name">
+          </md-input-container>
+
+          <div layout="row" layout-xs="column" flex>
+            <md-input-container flex>
+              <label for="password">Password</label>
+              <input id="password" type="password" required
+                     data-ng-model="userCtrl.user.password">
+            </md-input-container>
+
+            <md-input-container flex>
+              <label for="confirmPassword">Confirm</label>
+              <input id="confirmPassword" type="password" required
+                     data-ng-model="userCtrl.user.confirmPassword">
+            </md-input-container>
+          </div>
+
+          <div layout="row" layout-xs="column" layout-align-gt-xs="end center" flex>
+            <md-button type="submit" class="md-raised md-primary" name="save" flex="10" flex-xs="100">
+                Save
+            </md-button>
+          </div>
+        </form>
 
       </md-whiteframe>
 

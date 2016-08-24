@@ -1,1 +1,16 @@
-<h1>Users</h1>
+<h2>Users</h2>
+
+<md-whiteframe class="md-whiteframe-1dp" layout="row" layout-padding>
+
+  <md-list flex data-ng-init="initList()">
+    <md-list-item class="md-2-line"
+                  data-ng-repeat="user in users"
+                  data-ng-click="show(user)">
+      <div class="md-list-item-text" layout="column">
+        <h3>{{user.name}}</h3>
+        <p>{{user.email}}</p>
+      </div>
+    </md-list-item>
+  </md-list>
+
+</md-whiteframe>
