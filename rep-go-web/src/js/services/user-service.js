@@ -20,8 +20,10 @@
       return $http.get(API.user + id);
     };
 
-    svc.getAll = function() {
-      return $http.get(API.user);
+    svc.getAll = function(query) {
+      return $http.get(API.user, {
+        params: query
+      });
     };
 
     svc.remove = function(id) {

@@ -4,7 +4,7 @@ const User = require('../models/user-model');
 const ctrl = {}
 
 ctrl.getAll = (req, res) => {
-  User.getAll()
+  User.getAll(req.query)
     .then(data => {
       return res.status(200).send(data);
     })
