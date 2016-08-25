@@ -9,12 +9,20 @@
     var svc = {};
 
     svc.save = function(user) {
-      return $http.post(API.user, user);
+      if(user._id) {
+        return $http.put(API.user + user._id, user);
+      } else {
+        return $http.post(API.user, user);
+      }
     };
 
     svc.getAll = function() {
       return $http.get(API.user);
     };
+
+    svc.remove = function(id) {
+      return $http.delete(API.user + id);
+    }
 
     return svc;
   }

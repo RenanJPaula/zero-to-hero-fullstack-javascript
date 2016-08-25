@@ -16,8 +16,8 @@
         <md-content>
           <md-toolbar>
             <div class="md-toolbar-tools">
-              <md-button data-ng-click="toggle()">
-                Menu
+              <md-button class="md-icon-button" data-ng-click="toggle()">
+                <md-icon md-svg-icon="navigation:menu"></md-icon>
               </md-button>
 
               <h1>RepGO</h1>
@@ -27,8 +27,16 @@
 
 
         <md-sidenav class="md-sidenav-left" md-component-id="menu">
-          <a href="#/user/new">Add user</a>
-          <a href="#/users">Show users</a>
+
+          <md-list>
+            <md-subheader class="md-no-sticky">Actions</md-subheader>
+
+            <md-list-item data-ng-click="show()">
+              <md-icon md-svg-icon="social:people"></md-icon>
+              <p>Users</p>
+            </md-list-item>
+          </md-list>
+
         </md-sidenav>
 
       </nav>
@@ -64,6 +72,11 @@
           </div>
 
           <div layout="row" layout-xs="column" layout-align-gt-xs="end center" flex>
+            <md-button type="button" class="md-raised md-warn" name="remove" flex="10" flex-xs="100"
+                       data-ng-click="userCtrl.remove(userCtrl.user._id)"
+                       data-ng-show="userCtrl.user._id">
+                Remove
+            </md-button>
             <md-button type="submit" class="md-raised md-primary" name="save" flex="10" flex-xs="100">
                 Save
             </md-button>
@@ -85,6 +98,7 @@
 
     <script src="src/js/app.js"></script>
     <script src="src/js/config/api-config.js"></script>
+    <script src="src/js/config/icon-config.js"></script>
     <script src="src/js/services/user-service.js"></script>
     <script src="src/js/controllers/menu-controller.js"></script>
     <script src="src/js/controllers/user-controller.js"></script>

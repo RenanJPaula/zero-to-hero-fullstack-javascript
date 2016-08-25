@@ -11,12 +11,22 @@
     $scope.save = function(user) {
       userService.save(user)
         .then(function(resp) {
-          console.log(resp);
+          $scope.user = resp.data;
         })
         .catch(function(err) {
           console.log(err);
         });
     };
+
+    $scope.remove = function(id) {
+      userService.remove(id)
+        .then(function(resp) {
+          console.log(resp);
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
+    }
   }
 
 })(angular);

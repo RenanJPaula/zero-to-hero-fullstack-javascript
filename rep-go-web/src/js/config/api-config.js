@@ -4,7 +4,7 @@
   var host = 'http://localhost:3000/';
 
   angular.module('repgo').constant('API', {
-    user: host + 'user'
+    user: host + 'user/'
   });
 
 })(angular);
