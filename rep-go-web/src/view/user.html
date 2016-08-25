@@ -1,21 +1,38 @@
-<form data-ng-submit="save(userCtrl.user)" layout="column">
-  <md-input-container>
-    <label for="name">Name</label>
-    <input id="name" type="text" required
-           data-ng-model="userCtrl.user.name">
-  </md-input-container>
+<h2>{{vm.user._id ? 'Edit' : 'Insert' }} User</h2>
 
-  <md-input-container>
-    <label for="password">Password</label>
-    <input id="password" type="password" required
-           data-ng-model="userCtrl.user.password">
-  </md-input-container>
+<md-whiteframe class="md-whiteframe-1dp" layout="row" layout-padding>
 
-  <md-input-container>
-  <label for="confirmPassword">Confirm</label>
-    <input id="confirmPassword" type="password" required
-           data-ng-model="userCtrl.user.confirmPassword">
-  </md-input-container>
+  <form data-ng-submit="vm.save(vm.user)" flex layout="column" data-ng-init="vm.init()">
+    <md-input-container flex>
+      <label for="name">Name</label>
+      <input id="name" type="text" required
+             data-ng-model="vm.user.name">
+    </md-input-container>
 
-  <md-button type="submit" class="md-raised md-primary" name="save">Save</md-button>
-</form>
+    <div layout="row" layout-xs="column" flex>
+      <md-input-container flex>
+        <label for="password">Password</label>
+        <input id="password" type="password" required
+               data-ng-model="vm.user.password">
+      </md-input-container>
+
+      <md-input-container flex>
+        <label for="confirmPassword">Confirm</label>
+        <input id="confirmPassword" type="password" required
+               data-ng-model="vm.user.confirmPassword">
+      </md-input-container>
+    </div>
+
+    <div layout="row" layout-xs="column" layout-align-gt-xs="end center" flex>
+      <md-button type="button" class="md-raised md-warn" name="remove" flex="10" flex-xs="100"
+                 data-ng-click="vm.remove(vm.user._id)"
+                 data-ng-show="vm.user._id">
+          Remove
+      </md-button>
+      <md-button type="submit" class="md-raised md-primary" name="save" flex="10" flex-xs="100">
+          Save
+      </md-button>
+    </div>
+  </form>
+
+</md-whiteframe>

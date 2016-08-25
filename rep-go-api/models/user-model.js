@@ -20,7 +20,7 @@ const User = mongoose.model('User', schema)
 const model = {};
 
 model.getAll = () => {
-  return User.find({});
+  return User.find({ active: true });
 };
 
 model.getById = (_id) => {

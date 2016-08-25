@@ -2,10 +2,10 @@
 
 <md-whiteframe class="md-whiteframe-1dp" layout="row" layout-padding>
 
-  <md-list flex data-ng-init="initList()">
+  <md-list flex data-ng-init="vm.initList()">
     <md-list-item class="md-2-line"
-                  data-ng-repeat="user in users"
-                  data-ng-click="show(user)">
+                  data-ng-repeat="user in vm.users"
+                  data-ng-click="vm.edit(user)">
       <div class="md-list-item-text" layout="column">
         <h3>{{user.name}}</h3>
         <p>{{user.email}}</p>

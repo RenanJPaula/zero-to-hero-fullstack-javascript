@@ -4,20 +4,20 @@
   angular.module('repgo')
     .controller('UserListController', controller);
 
-  controller.$inject = ['$scope', 'UserService'];
+  controller.$inject = ['UserService', '$location'];
 
-  function controller($scope, userService) {
+  function controller(userService, $location) {
+    var vm = this;
 
-    $scope.initList = function() {
+    vm.initList = function() {
       userService.getAll().success(function(data) {
-        $scope.users = data;
+        vm.users = data;
       });
     };
 
-    $scope.show = function(user) {
-      console.log(user);
+    vm.edit = function(user) {
+      $location.path('/user/' + user._id + '/edit');
     };
-
   }
 
 })(angular);

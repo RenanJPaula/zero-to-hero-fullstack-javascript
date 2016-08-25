@@ -3,25 +3,40 @@
 
   angular.module('repgo').controller('UserController', ctrl);
 
-  ctrl.$inject = ['$scope', 'UserService'];
+  ctrl.$inject = ['UserService', '$routeParams', '$location'];
 
-  function ctrl($scope, userService) {
-    $scope.user = {};
+  function ctrl(userService, $routeParams, $location) {
+    var vm = this;
 
-    $scope.save = function(user) {
+    vm.init = function() {
+      var _id = $routeParams.id;
+      if(_id) {
+        userService.getById(_id)
+          .then(function(resp) {
+            vm.user = resp.data;
+          })
+          .catch(function(err) {
+            console.log(err);
+          });
+      } else {
+        vm.user = {};
+      }
+    };
+
+    vm.save = function(user) {
       userService.save(user)
         .then(function(resp) {
-          $scope.user = resp.data;
+          $location.path('/users');
         })
         .catch(function(err) {
           console.log(err);
         });
     };
 
-    $scope.remove = function(id) {
+    vm.remove = function(id) {
       userService.remove(id)
         .then(function(resp) {
-          console.log(resp);
+          $location.path('/users');
         })
         .catch(function(err) {
           console.log(err);
