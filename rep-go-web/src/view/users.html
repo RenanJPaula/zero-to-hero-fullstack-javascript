@@ -1,11 +1,18 @@
 <h2>Users</h2>
 
+<form layout="row" data-ng-submit="vm.search(vm.name)">
+  <md-input-container flex>
+    <label for="search">Search</label>
+    <input id="search" type="text" data-ng-model="vm.name">
+  </md-input-container>
+</form>
+
 <md-whiteframe class="md-whiteframe-1dp" layout="row" layout-padding>
 
-  <md-list flex data-ng-init="initList()">
+  <md-list flex data-ng-init="vm.initList()">
     <md-list-item class="md-2-line"
-                  data-ng-repeat="user in users"
-                  data-ng-click="show(user)">
+                  data-ng-repeat="user in vm.users"
+                  data-ng-click="vm.edit(user)">
       <div class="md-list-item-text" layout="column">
         <h3>{{user.name}}</h3>
         <p>{{user.email}}</p>
@@ -14,3 +21,9 @@
   </md-list>
 
 </md-whiteframe>
+
+<div layout="row" layout-align="end center" flex>
+  <md-button class="md-fab" aria-label="Add User" data-ng-click="vm.newUser()">
+    <md-icon md-svg-icon="content:add"></md-icon>
+  </md-button>
+</div>

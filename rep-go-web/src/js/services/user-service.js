@@ -16,13 +16,19 @@
       }
     };
 
-    svc.getAll = function() {
-      return $http.get(API.user);
+    svc.getById = function(id) {
+      return $http.get(API.user + id);
+    };
+
+    svc.getAll = function(query) {
+      return $http.get(API.user, {
+        params: query
+      });
     };
 
     svc.remove = function(id) {
       return $http.delete(API.user + id);
-    }
+    };
 
     return svc;
   }

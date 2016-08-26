@@ -16,7 +16,7 @@
         <md-content>
           <md-toolbar>
             <div class="md-toolbar-tools">
-              <md-button class="md-icon-button" data-ng-click="toggle()">
+              <md-button class="md-icon-button" data-ng-click="menuCtrl.toggle()">
                 <md-icon md-svg-icon="navigation:menu"></md-icon>
               </md-button>
 
@@ -31,9 +31,10 @@
           <md-list>
             <md-subheader class="md-no-sticky">Actions</md-subheader>
 
-            <md-list-item data-ng-click="show()">
-              <md-icon md-svg-icon="social:people"></md-icon>
-              <p>Users</p>
+            <md-list-item data-ng-repeat="iten in menuCtrl.menuItens"
+                          data-ng-click="menuCtrl.show(iten.path)">
+              <md-icon md-svg-icon="{{iten.icon}}"></md-icon>
+              <p>{{iten.name}}</p>
             </md-list-item>
           </md-list>
 
@@ -42,50 +43,8 @@
       </nav>
     </header>
 
-    <div class="main-content" data-ng-controller="UserController as userCtrl">
+    <div class="main-content" data-ng-view="">
       <!-- Content -->
-
-      <!-- Código que será exportado -->
-      <h2>User</h2>
-
-      <md-whiteframe class="md-whiteframe-1dp" layout="row" layout-padding>
-
-        <form data-ng-submit="save(userCtrl.user)" flex layout="column">
-          <md-input-container flex>
-            <label for="name">Name</label>
-            <input id="name" type="text" required
-                   data-ng-model="userCtrl.user.name">
-          </md-input-container>
-
-          <div layout="row" layout-xs="column" flex>
-            <md-input-container flex>
-              <label for="password">Password</label>
-              <input id="password" type="password" required
-                     data-ng-model="userCtrl.user.password">
-            </md-input-container>
-
-            <md-input-container flex>
-              <label for="confirmPassword">Confirm</label>
-              <input id="confirmPassword" type="password" required
-                     data-ng-model="userCtrl.user.confirmPassword">
-            </md-input-container>
-          </div>
-
-          <div layout="row" layout-xs="column" layout-align-gt-xs="end center" flex>
-            <md-button type="button" class="md-raised md-warn" name="remove" flex="10" flex-xs="100"
-                       data-ng-click="userCtrl.remove(userCtrl.user._id)"
-                       data-ng-show="userCtrl.user._id">
-                Remove
-            </md-button>
-            <md-button type="submit" class="md-raised md-primary" name="save" flex="10" flex-xs="100">
-                Save
-            </md-button>
-          </div>
-        </form>
-
-      </md-whiteframe>
-
-      <!-- FIM código que será exportado -->
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -98,6 +57,7 @@
 
     <script src="src/js/app.js"></script>
     <script src="src/js/config/api-config.js"></script>
+    <script src="src/js/config/route-config.js"></script>
     <script src="src/js/config/icon-config.js"></script>
     <script src="src/js/services/user-service.js"></script>
     <script src="src/js/controllers/menu-controller.js"></script>

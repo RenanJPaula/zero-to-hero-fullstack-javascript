@@ -6,13 +6,22 @@
   config.$inject = ['$routeProvider'];
 
   function config($routeProvider) {
-    $routeProvider.when('/user/new', {
-      templateUrl: 'src/view/user.html',
-			controller: 'UserController',
-			controllerAs: 'userCtrl'
-    }).when('/users', {
-      templateUrl: 'src/view/users.html'
-    });
+    $routeProvider
+      .when('/users', {
+        templateUrl: 'src/view/users.html',
+  			controller: 'UserListController',
+  			controllerAs: 'vm'
+      })
+      .when('/user/new', {
+        templateUrl: 'src/view/user.html',
+  			controller: 'UserController',
+  			controllerAs: 'vm'
+      })
+      .when('/user/:id/edit', {
+        templateUrl: 'src/view/user.html',
+  			controller: 'UserController',
+  			controllerAs: 'vm'
+      });
   }
 
 })(angular);

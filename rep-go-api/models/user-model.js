@@ -19,8 +19,9 @@ const schema = new mongoose.Schema({
 const User = mongoose.model('User', schema)
 const model = {};
 
-model.getAll = () => {
-  return User.find({});
+model.getAll = (query = {}) => {
+  query.active = true;
+  return User.find(query);
 };
 
 model.getById = (_id) => {
