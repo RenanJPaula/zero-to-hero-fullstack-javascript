@@ -43,6 +43,8 @@
       </nav>
     </header>
 
+    <div data-ng-controller="MessageController as messageCtrl"></div>
+
     <div class="main-content" data-ng-view="">
       <!-- Content -->
     </div>
@@ -52,6 +54,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.min.js"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
 
@@ -59,8 +62,13 @@
     <script src="src/js/config/api-config.js"></script>
     <script src="src/js/config/route-config.js"></script>
     <script src="src/js/config/icon-config.js"></script>
+    <script src="src/js/config/interceptor-config.js"></script>
+    <script src="src/js/interceptors/basic-auth-interceptor.js"></script>
     <script src="src/js/services/user-service.js"></script>
+    <script src="src/js/services/user-service.js"></script>
+    <script src="src/js/services/message-service.js"></script>
     <script src="src/js/controllers/menu-controller.js"></script>
+    <script src="src/js/controllers/message-controller.js"></script>
     <script src="src/js/controllers/user-controller.js"></script>
     <script src="src/js/controllers/user-list-controller.js"></script>
   </body>

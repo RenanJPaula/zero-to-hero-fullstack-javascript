@@ -3,9 +3,9 @@
 
   angular.module('repgo').controller('UserController', ctrl);
 
-  ctrl.$inject = ['UserService', '$routeParams', '$location'];
+  ctrl.$inject = ['UserService', '$routeParams', '$location', 'MessageService'];
 
-  function ctrl(userService, $routeParams, $location) {
+  function ctrl(userService, $routeParams, $location, messageService) {
     var vm = this;
 
     vm.init = function() {
@@ -27,9 +27,10 @@
       userService.save(user)
         .then(function(resp) {
           $location.path('/users');
+          messageService.show('Success Save!');
         })
         .catch(function(err) {
-          console.log(err);
+          messageService.show('Unespected Error!');
         });
     };
 
@@ -37,9 +38,10 @@
       userService.remove(id)
         .then(function(resp) {
           $location.path('/users');
+          messageService.show('Success Remove!');
         })
         .catch(function(err) {
-          console.log(err);
+          messageService.show('Unespected Error!');
         });
     }
   }

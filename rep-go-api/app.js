@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 // Config Middlewares
 app.use(require('./middlewares/i18n-middleware.js'));
-// app.use(require('./middlewares/auth-middleware.js'));
+app.use(require('./middlewares/auth-middleware.js'));
 
 // Route config
 app.use(require('./routes/transaction-route'));
