@@ -12,10 +12,24 @@ Todo o material do curso está disponível em:
 
 ## Agenda:
 
-### JavaScript e sua essência (Primeira semana)
-
 - [x] Aula 1 - Introdução, Strict Mode, Variáveis e Hoisting;
 - [x] Aula 2 - Tipos de dados, Operadores, Estruturas de controle;
 - [x] Aula 3 - Funções, Closure e Callback;
 - [x] Aula 4 - Namespace, Prototype e Shadowing;
-- [ ] Aula 5 - ES6;
+- [x] Aula 5 - NodeJS, NPM e Módulos;
+- [x] Aula 6 - MongoDB;
+- [x] Aula 7 - Mongoose;
+- [x] Aula 8 - Mongoose e Promises;
+- [x] Aula 9 - HTTP e REST;
+- [x] Aula 10 - Express;
+- [x] Aula 11 - Express e Middlewares;
+- [x] Aula 12 - Error handler, I18N e Middlewares;
+- [x] Aula 13 - Event Loop, Single Thread, Encapsulamento, Two Way Data Binding e Programação Declarativa;
+- [x] Aula 14 - AngularJS, Controllers e Diretivas;
+- [x] Aula 15 - Angularjs, Services e Constantes;
+- [x] Aula 16 - Angularjs, AngularMaterial e NgRoute;
+- [x] Aula 17 - AngularMaterial;
+- [x] Aula 18 - Angular Material e Icons;
+- [x] Aula 19 - Criação de Rotas e Query String;
+- [x] Aula 20 - HTTP Interceptor e BroadCast;
+- [x] Aula 21 - Build Front-End, Otimização de Aplicações e Gulpjs;
