@@ -7,7 +7,7 @@ Este curso explora desde os fundamentos da linguagem JavaScript até o conjunto 
 ## Material do curso:
 
 Todo o material do curso está disponível em: 
-- [Vídeo Aulas](www.youtube.com/playlist?list=PLmejHXtGQVwiNUDHwzCIoE9qNA7Ncgt9t);
+- [Vídeo Aulas](http://www.youtube.com/playlist?list=PLmejHXtGQVwiNUDHwzCIoE9qNA7Ncgt9t);
 - [Série Zero to Hero JavaScript do blog We Love Dev](http://www.welovedev.com.br/?search=Zero+to+Hero+JavaScript);
 - [Facebook](https://www.facebook.com/welovedev/);
 
